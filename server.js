@@ -1,3 +1,7 @@
+const environment = process.env.NODE_ENV || 'development'
+const configuration = require('../knexfile')[environment]
+const database = require('knex')(configuration)
+
 const express = require('express')
 const app = express()
 
@@ -9,8 +13,15 @@ app.get('/', (request, response) => {
   response.send("We're going to test all the routes!")
 })
 
-app.get('/api/v1/students', (request, response) => {
-  return response.status(200).json(app.locals.students)
+app.get('/api/v1/papers', (request, response) => {
+  database('papers')
+    .select()
+    .then(papers => {
+      response.status(200).json(papers)
+    })
+    .catch(error => {
+      response.status(500).json({error})
+    })
 })
 
 module.exports = app.listen(app.get('port'), () => {
