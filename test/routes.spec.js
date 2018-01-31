@@ -27,10 +27,10 @@ describe('All the routes', () => {
   })
 
   describe('API Routes', () => {
-    describe('GET /api/v1/students', () => {
+    describe('GET /api/v1/papers', () => {
       it('should return all of the students', async () => {
         try {
-          const response = await chai.request(server).get('/api/v1/students')
+          const response = await chai.request(server).get('/api/v1/papers')
           response.should.have.status(200)
           response.should.be.json
           response.body.should.be.a('array')
