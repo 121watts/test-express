@@ -7,7 +7,6 @@ const app = express()
 
 app.set('port', process.env.PORT || 3001)
 app.locals.title = 'Test Express'
-app.locals.students = require('./students.js')
 
 app.get('/', (request, response) => {
   response.send("We're going to test all the routes!")
