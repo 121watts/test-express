@@ -1,11 +1,11 @@
 const environment = process.env.NODE_ENV || 'development'
-const configuration = require('../knexfile')[environment]
+const configuration = require('./knexfile')[environment]
 const database = require('knex')(configuration)
 
 const express = require('express')
 const app = express()
 
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 3001)
 app.locals.title = 'Test Express'
 app.locals.students = require('./students.js')
 
