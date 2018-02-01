@@ -1,8 +1,3 @@
-var log = x => {
-  console.log('THIS IS THE THING IM LOGGINS', x)
-  return x
-}
-
 module.exports = {
   development: {
     client: 'pg',
@@ -25,12 +20,8 @@ module.exports = {
   },
   test: {
     client: 'pg',
-    connection:
-      log(process.env.TEST_DATABASE_URL) || 'postgres://localhost/publications',
+    connection: process.env.DATABASE_URL || 'postgres://localhost/publications',
     useNullAsDefault: true,
-    user: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PASSWORD,
-    database: process.env.POSTGRES_PASSWORD,
     migrations: {
       directory: './db/migrations',
     },
