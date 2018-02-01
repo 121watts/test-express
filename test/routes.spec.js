@@ -23,7 +23,7 @@ describe('All the routes', () => {
 
   describe('API Routes', () => {
     describe('GET /api/v1/papers', () => {
-      it('should return all of the students', async () => {
+      it('should return all of the papers', async () => {
         try {
           const response = await chai.request(server).get('/api/v1/papers')
           response.should.have.status(200)
