@@ -2,15 +2,10 @@ const chai = require('chai')
 const should = chai.should()
 const chaiHttp = require('chai-http')
 const server = require('../server')
-const pry = require('pryjs')
 
 chai.use(chaiHttp)
 
 describe('All the routes', () => {
-  after(done => {
-    server.close(done)
-  })
-
   describe('Client Routes', () => {
     it('should return the homepage with text', async () => {
       const response = await chai.request(server).get('/')
