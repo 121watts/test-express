@@ -14,3 +14,9 @@ database:
 test:
   override:
     - ./node_modules/.bin/mocha --exit
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: ci-fun
