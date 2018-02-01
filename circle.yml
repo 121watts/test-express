@@ -16,3 +16,9 @@ database:
 test:
   override:
     - mocha --exit
+
+deployment:
+  staging:
+    branch: lets-break-stuff
+    heroku:
+      appname: ci-fun
