@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha",
+    "test:ci": "./node_modules/.bin/mocha --exit",
     "start": "node server.js"
   },
   "author": "Robbie Jaeger",
