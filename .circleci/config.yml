@@ -48,3 +48,9 @@ jobs:
       # run tests!
       - run: npm run test:ci
 
+
+  deployment:
+    staging:
+      branch: master
+      heroku:
+        appname: ci-fun
