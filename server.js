@@ -9,7 +9,7 @@ app.set('port', process.env.PORT || 3000)
 app.locals.title = 'Test Express'
 
 app.get('/', (request, response) => {
-  response.send("We're going to test all the routes!")
+  response.send('We are not continuous integrators')
 })
 
 app.get('/api/v1/papers', (request, response) => {
