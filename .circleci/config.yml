@@ -43,7 +43,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run migrations
-      - run: ./node_modules/knex/bin/cli.js knex migrate:latest
+      - run: ./node_modules/knex/bin/cli.js migrate:latest
 
       # run tests!
       - run: npm test
