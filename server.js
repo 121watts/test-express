@@ -1,4 +1,5 @@
 const environment = process.env.NODE_ENV || 'development'
+console.log('HERES your process being set', process.env)
 const configuration = require('./knexfile')[environment]
 const database = require('knex')(configuration)
 
