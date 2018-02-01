@@ -23,6 +23,9 @@ module.exports = {
     connection:
       process.env.TEST_DATABASE_URL || 'postgres://localhost/publications',
     useNullAsDefault: true,
+    user: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+    database: process.env.POSTGRES_PASSWORD,
     migrations: {
       directory: './db/migrations',
     },
