@@ -20,7 +20,8 @@ module.exports = {
   },
   test: {
     client: 'pg',
-    connection: process.env.DATABASE_URL || 'postgres://localhost/publications',
+    connection:
+      process.env.TEST_DATABASE_URL || 'postgres://localhost/publications',
     useNullAsDefault: true,
     migrations: {
       directory: './db/migrations',
