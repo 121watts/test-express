@@ -1,12 +1,15 @@
 machine:
   timezone:
     America/Denver
-
-node:
-  version: 8.9.0
+  node:
+    version: 8.9.0
 
 environment:
   DATABASE_URL: postgresql://ubuntu:@127.0.0.1:5432/circle_test
+
+database:
+  override:
+    - ./node_modules/knex/bin/cli.js migrate:latest
 
 test:
   override:
