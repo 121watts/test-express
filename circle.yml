@@ -9,7 +9,7 @@ environment:
 
 database:
   override:
-    - sudo -u postgres psql -p 5433 -c "create database publications;"
+    - sudo -u postgres psql -p 5432 -c "create database publications;"
     - ./node_modules/knex/bin/cli.js migrate:latest
 
 test:
