@@ -1,17 +1,18 @@
 machine:
   timezone:
     America/Denver
-  node:
-    version: 7.10.0
 
-  environment:
-    DATABASE_URL: postgresql://ubuntu:@127.0.0.1:5432/circle_test
+node:
+  version: 7.10.0
 
-  database:
-    override:
-      - mv config/database.ci.yml config/database.yml
-      - ./node_modules/knex/bin/cli.js migrate:latest
+environment:
+  DATABASE_URL: postgresql://ubuntu:@127.0.0.1:5432/circle_test
 
-  test:
-    override:
-      - ./node_modules/.bin/mocha --exit
+database:
+  override:
+    - mv config/database.ci.yml config/database.yml
+    - ./node_modules/knex/bin/cli.js migrate:latest
+
+test:
+  override:
+    - ./node_modules/.bin/mocha --exit
