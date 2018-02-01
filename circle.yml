@@ -10,7 +10,6 @@ environment:
 
 database:
   override:
-    - mv config/database.ci.yml config/database.yml
     - ./node_modules/knex/bin/cli.js migrate:latest
 
 test:
