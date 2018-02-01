@@ -10,6 +10,7 @@ jobs:
       - image: circleci/node:8.9.4
         environment:
           TEST_DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
+          NODE_ENV: 'test'
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
