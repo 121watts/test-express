@@ -12,7 +12,6 @@ describe('All the routes', () => {
 
       response.should.have.status(200)
       response.should.be.html
-      expect(true).to.equal(false)
     })
 
     it('should return a 404 for a route that does not exist', async () => {
