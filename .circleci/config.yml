@@ -48,6 +48,8 @@ jobs:
       # run tests!
       - run: npm run test:ci
 
+      - run: bash .circleci/setup-heroku.sh
+
       - deploy:
           name: Deploy Master to Heroku
           command: |
